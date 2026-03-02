@@ -19,7 +19,6 @@
     </form>
 
     <div id="webchat"></div>
-    <script src="https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"></script>
     <script>
         !(function () {
             let e = document.createElement("script"),
@@ -35,6 +34,7 @@
                             socketUrl: "https://6c73-103-28-161-199.ngrok-free.app", // Change this to your public Ngrok/server URL when deployed online
                             title: "UsaktiBot",
                             subtitle: "Usakti Bot Assistant",
+                            hideWhenNotConnected: false // Forces widget to show even if connection drops or is blocked
                         },
                         null
                     );
