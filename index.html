@@ -1,19 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novandy Asardi</title>
     <link rel="stylesheet" href="style.css">
+
 <body>
     </nav>
     <p>welcome page</p>
     <h1>Welcome to My Page!</h1>
-    <form action="/home.html">  
-        <input type="submit" value="Proceed to My Website"/>
+    <form action="/home.html">
+        <input type="submit" value="Proceed to My Website" />
     </form>
     <form action="/testAll.html">
-        <input type="submit" value="Test Page"/>
+        <input type="submit" value="Test Page" />
     </form>
+
+    <div id="webchat"></div>
+    <script src="https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"></script>
+    <script>
+        !(function () {
+            let e = document.createElement("script"),
+                t = document.head || document.getElementsByTagName("head")[0];
+            (e.src =
+                "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"),
+                (e.async = !0),
+                (e.onload = () => {
+                    window.WebChat.default(
+                        {
+                            initPayload: '/greet', // Initial message sent to bot when opened
+                            customData: { language: "id" },
+                            socketUrl: "http://localhost:5005", // Change this to your public Ngrok/server URL when deployed online
+                            title: "UsaktiBot",
+                            subtitle: "Usakti Bot Assistant",
+                        },
+                        null
+                    );
+                }),
+                t.insertBefore(e, t.firstChild);
+        })();
+    </script>
 </body>
+
 </html>
