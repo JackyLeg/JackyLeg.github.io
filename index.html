@@ -19,6 +19,8 @@
 
     <div id="webchat"></div>
     <script src="https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"></script>
+    <div id="webchat"></div>
+    <script src="https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"></script>
     <script>
         !(function () {
             let e = document.createElement("script"),
@@ -29,11 +31,21 @@
                 (e.onload = () => {
                     window.WebChat.default(
                         {
-                            // initPayload: '/greet', // Initial message sent to bot when opened
+                            initPayload: '/greet', // Initial message sent to bot when opened
                             customData: { language: "id" },
-                            socketUrl: "https://nvidia-enjoyed-launch-purse.trycloudflare.com", // Change this to your public Ngrok/server URL when deployed online
+                            socketUrl: "https://curves-creative-talking-screens.trycloudflare.com/", // Change this to your public Ngrok/server URL when deployed online
                             title: "UsaktiBot",
                             subtitle: "Usakti Bot Assistant",
+                            showFullScreenButton: true,
+                            displayUnreadCount: true,
+                            showMessageDate: true,
+                            docViewer: true,
+                            inputTextFieldHint: "Masukan pertanyaan di sini ...",
+                            hideWhenNotConnected: false,
+                            clearChatOnReload: false,
+                            params: {
+                                storage: "session"
+                            }
                         },
                         null
                     );
